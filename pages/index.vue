@@ -28,6 +28,7 @@
       <CardComponent />
       <CardComponent />
     </div>
+    <PaginationComponent />
     <FooterComponent />
   </div>
 </template>

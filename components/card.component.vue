@@ -8,11 +8,11 @@
           style="background: #2f80ed"
           class="flex items-center justify-center w-12 h-12 rounded-full"
         >
-          <img :src="coding" class="w-8 h-8" alt="" />
+          <img :src="coding" class="w-6 h-6" alt="" />
         </div>
         <div class="ml-2">
           <h2
-            style="color: #576f7f; margin-right: 0.5rem py-1"
+            style="color: #576f7f;"
             class="text-lg font-semibold"
           >
             Asam237
