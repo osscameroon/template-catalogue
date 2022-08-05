@@ -29,6 +29,7 @@
       <CardComponent />
     </div>
     <PaginationComponent />
+    <SubmitSurveyComponent />
     <FooterComponent />
   </div>
 </template>

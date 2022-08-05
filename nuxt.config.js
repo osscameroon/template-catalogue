@@ -39,7 +39,7 @@ export default {
   ],
   fontawesome: {
     icons: {
-      brands: ['faGithub'],
+      brands: ['faGithub', 'faPeriscope', 'faGitlab'],
     },
   },
 
