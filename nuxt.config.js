@@ -71,7 +71,8 @@ export default {
         use: 'yaml-loader',
       })
     },
-    extend(config, {}) {
+
+    extend(config, { isDev, isClient }) {
       config.node = {
         fs: 'empty',
       }

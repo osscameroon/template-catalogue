@@ -1,5 +1,9 @@
 export const actions = {
   showAllSurvey({ commit }) {
-    return commit('survey/survey/SETSURVEY', [])
+    fetch('/survey.json')
+      .then((response) => response.json())
+      .then((json) => {
+        return commit('survey/survey/SETSURVEY', json)
+      })
   },
 }
