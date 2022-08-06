@@ -40,7 +40,21 @@ export default {
   data() {
     return {
       search: require('../assets/search.png'),
+      data: [],
     }
+  },
+  computed: {
+    survey() {
+      return this.$store.state.survey.survey
+    },
+  },
+  async created() {
+    await this.showAllSurvey()
+  },
+  methods: {
+    async showAllSurvey() {
+      await this.$store.dispatch('showAllSurvey')
+    },
   },
 }
 </script>
