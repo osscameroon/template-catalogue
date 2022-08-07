@@ -64,17 +64,12 @@ export default {
         autoprefixer: {},
       },
     },
-    extend(config) {
-      config.module.rules.push({
-        test: /\.ya?ml$/,
-        type: 'json',
-        use: 'yaml-loader',
-      })
-    },
-
-    extend(config, { isDev, isClient }) {
-      config.node = {
-        fs: 'empty',
+    extend(config, ctx) {
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          test: /\.ya?ml$/,
+          use: 'js-yaml-loader',
+        })
       }
     },
   },

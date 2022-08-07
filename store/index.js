@@ -1,9 +1,6 @@
+import mySurvey from '../assets/data/survey.yaml'
 export const actions = {
-  showAllSurvey({ commit }) {
-    fetch('/survey.json')
-      .then((response) => response.json())
-      .then((json) => {
-        return commit('survey/survey/SETSURVEY', json)
-      })
+  async showAllSurvey({ commit }) {
+    return commit('survey/survey/SETSURVEY', await mySurvey.items)
   },
 }

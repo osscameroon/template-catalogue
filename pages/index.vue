@@ -22,11 +22,16 @@
       <SearchComponent />
     </div>
     <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
+      <div v-for="(item, myIndex) in mySurvey.items" :key="myIndex">
+        <CardComponent
+          :city="item.city"
+          :github_handle="item.github_handle"
+          :gitlab_handle="item.gitlab_handle"
+          :developer_type="item.developer_type"
+          :fav_languages="item.fav_languages"
+          :fav_frameworks="item.fav_frameworks"
+        />
+      </div>
     </div>
     <PaginationComponent />
     <SubmitSurveyComponent />
@@ -35,12 +40,13 @@
 </template>
 
 <script>
+import mySurvey from '../assets/data/survey.yaml'
 export default {
   name: 'IndexPage',
   data() {
     return {
       search: require('../assets/search.png'),
-      data: [],
+      mySurvey,
     }
   },
   computed: {
