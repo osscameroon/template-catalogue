@@ -14,7 +14,7 @@
           <div class="ml-2">
             <h2 style="color: #576f7f" class="text-lg font-semibold">
               {{
-                typeof github_handle == 'undefined' || github_handle.length == 0
+                github_handle === undefined || github_handle.length === 0
                   ? 'Developer'
                   : github_handle
               }}
