@@ -4,6 +4,13 @@
   flex-wrap: wrap;
   gap: 5px;
   justify-content: flex-start;
+  height: 100px;
+}
+.card-tags-dev {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .card-tags span {
