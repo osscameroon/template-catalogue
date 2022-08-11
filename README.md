@@ -21,7 +21,8 @@ npm run dev or yarn dev
 ```
 npm run build or yarn build
 ```
+### To launch the front-end with Docker, you need:
 
-### Screenshots
+- `docker build -t <name> .`
+- `docker run -p 3000:3000 <name>`
 
-Illustrative video of the project
