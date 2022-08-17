@@ -26,7 +26,9 @@
           :gitlab_handle="item.gitlab_handle"
           :developer_type="item.developer_type"
           :fav_languages="item.fav_languages"
-          :fav_frameworks="item.fav_frameworks"
+          :fav_frameworks="
+            item.fav_frameworks.length > 0 ? item.fav_frameworks : ['Empty']
+          "
         />
       </div>
     </div>
@@ -39,6 +41,9 @@
 <script>
 export default {
   name: 'IndexPage',
+  head: {
+    title: 'Template Catalogue',
+  },
   data() {
     return {
       searchQuery: ' ',
