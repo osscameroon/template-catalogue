@@ -2,7 +2,7 @@ name: Process catalogue's entry
 on:
   issues:
     types: [opened]
-concurrency: 'github-action-catalogue'
+concurrency: 'main'
 jobs:
   take_catalogue:
     runs-on: ubuntu-latest
@@ -26,14 +26,17 @@ jobs:
       - run: |
           cat catalogue_submission.json | jq
 
-      - name: Commit changes
+      - name: Set convert json to yaml
         shell: bash
         run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com" && \
-          git config --global user.name "github-actions[bot]" && \
-          # git add ./src/res/catalogue.yaml && \
-          git commit -m 'new catalogue answer' && \
-          git push
+          cat catalogue_submission.json | yq e '{"items": [.]}' -P - > catalogue_submission.yaml
+      - run: cat catalogue_submission.yaml
+        #- run: cat ./src/res/catalogue.yaml
+      - name: Set convert json to yaml
+        shell: bash
+        run: |
+          yq ea '. as $item ireduce ({}; . *+ $item)' -i ./src/res/catalogue.yaml catalogue_submission.yaml
+          - run: cat ./src/res/catalogue.yaml
 
       - uses: peter-evans/close-issue@v1
         with:
