@@ -42,7 +42,7 @@ jobs:
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com" && \
           git config --global user.name "github-actions[bot]" && \
-          git add ./src/res/catalogue.yaml && \
+          # git add ./src/res/catalogue.yaml && \
           git commit -m 'new catalogue answer' && \
           git push
 
