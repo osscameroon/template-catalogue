@@ -1,7 +1,7 @@
 name: Process catalogues entry
 on:
   issues:
-    types: [opened]
+    types: [ opened ]
 concurrency: 'main'
 jobs:
   take_catalogue:
@@ -24,7 +24,7 @@ jobs:
       - run: echo '${{ steps.issue-parser.outputs.jsonString }}' > catalogue_submission.json
 
       - run: |
-          cat catalogue_submission.json | jq  
+          cat catalogue_submission.json | jq
 
       - name: Set convert json to yaml
         shell: bash
