@@ -25,3 +25,8 @@ jobs:
 
       - run: |
           cat catalogue_submission.json | jq  
+
+      - name: Set convert json to yaml
+        shell: bash
+        run: |
+          cat catalogue_submission.json | yq e '{"items": [.]}' -P - > catalogue_submission.yaml
