@@ -1,4 +1,4 @@
-name: Process catalogue's entry
+name: Process catalogue's entry.
 on:
   issues:
     types: [opened]
