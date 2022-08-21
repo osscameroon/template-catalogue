@@ -11,4 +11,4 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: run linter
-        run: yarn lintfix
+        run: yarn install & yarn lintfix
