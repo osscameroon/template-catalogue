@@ -35,6 +35,20 @@ jobs:
         shell: bash
         run: |
           yq ea '. as $item ireduce ({}; . *+ $item)' -i ./assets/data/survey.yaml catalogue_submission.yaml
+
+
+      - run: cat survey_submission.yaml
+
+      - run: cat ./assets/data/survey.yaml
+
+      - name: Set convert json to yaml
+        shell: bash
+        run: |
+          yq ea '. as $item ireduce ({}; . *+ $item)' -i ./assets/data/survey.yaml survey_submission.yaml
+
+      - run: cat ./assets/data/survey.yaml
+
+
       - uses: peter-evans/close-issue@v1
         with:
           comment: Your catalogue answer was submitted and will be deployed in few minutes here ...
