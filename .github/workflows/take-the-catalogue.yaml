@@ -11,10 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.event.issue.title, 'DO NOT EDIT') && contains(github.event.issue.title, 'takes the catalogue')
     steps:
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GA_WORKFLOW_DEPLOYMENTS_TOKEN }}
-
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
