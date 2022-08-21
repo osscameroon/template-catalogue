@@ -5,7 +5,7 @@
   >
     You are a cameroonian developer, please take this 3 minutes survey
     <a
-      href="https://github.com/osscameroon/devsurvey/issues/new?assignees=&labels=&template=take-the-survey.yaml&title=DO+NOT+EDIT+-+takes+the+developer+survey"
+      href="https://github.com/osscameroon/template-catalogue/issues/new?assignees=&labels=&template=take-the-catalogue.yaml&title=DO+NOT+EDIT+-+takes+the+catalogue"
       target="_blank"
       style="color: #2f80ed"
       class="underline"
