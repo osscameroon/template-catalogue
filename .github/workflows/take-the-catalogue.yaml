@@ -1,0 +1,8 @@
+name: Process catalogues entry
+on:
+  issues:
+    types: [opened]
+concurrency: 'main'
+jobs:
+  take_catalogue:
+    runs-on: ubuntu-latest
