@@ -2,18 +2,50 @@ name: Process catalogue's entry
 on:
   issues:
     types: [opened]
-  push:
-    branches:
-      - github-action-catalogue
 concurrency: 'main'
 jobs:
   take_catalogue:
     runs-on: ubuntu-latest
     if: contains(github.event.issue.title, 'DO NOT EDIT') && contains(github.event.issue.title, 'takes the catalogue')
     steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GA_WORKFLOW_DEPLOYMENTS_TOKEN }}
+
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - name: print hello world
-        run: echo "Hello World"
 
+      - uses: elhmn/github-issue-parser@release-parse-checkbox
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/take-the-catalogue.yaml
+
+      - run: echo '${{ steps.issue-parser.outputs.jsonString }}' > catalogue_submission.json
+
+      - run: |
+          cat catalogue_submission.json | jq
+
+      - name: Set convert json to yaml
+        shell: bash
+        run: |
+          cat catalogue_submission.json | yq e '{"items": [.]}' -P - > catalogue_submission.yaml
+      - run: cat catalogue_submission.yaml
+      - run: cat ./src/res/catalogue.yaml
+      - name: Set convert json to yaml
+        shell: bash
+        run: |
+          yq ea '. as $item ireduce ({}; . *+ $item)' -i ./src/res/catalogue.yaml catalogue_submission.yaml
+      - run: cat ./src/res/catalogue.yaml
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com" && \
+          git config --global user.name "github-actions[bot]" && \
+          git add ./src/res/catalogue.yaml && \
+          git commit -m 'new catalogue answer' && \
+          git push
+
+      - uses: peter-evans/close-issue@v1
+        with:
+          comment: Your catalogue answer was submitted and will be deployed in few minutes here ...
