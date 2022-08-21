@@ -5,8 +5,8 @@
       <div class="flex flex-col items-center justify-center sm:flex-row">
         <div class="flex w-full">
           <input
-            type="text"
             v-model="searchQuery"
+            type="text"
             placeholder="search"
             class="block w-full p-2 m-0 font-normal text-gray-700 bg-white bg-no-repeat border border-gray-300 border-solid appearance-none rounded-tl-md rounded-bl-md form-select bg-clip-padding transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none text-[18px]"
           />
@@ -41,15 +41,15 @@
 <script>
 export default {
   name: 'IndexPage',
-  head: {
-    title: 'Template Catalogue',
-  },
   data() {
     return {
       searchQuery: ' ',
       search: require('../assets/search.png'),
       mydata: this.$store.state.survey.survey,
     }
+  },
+  head: {
+    title: 'Template Catalogue',
   },
   computed: {
     resultQuery() {

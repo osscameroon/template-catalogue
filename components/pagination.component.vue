@@ -6,8 +6,8 @@
         aria-label="Pagination"
       >
         <span
-          @click="startpage()"
           class="relative inline-flex items-center px-4 py-2 text-xs font-medium text-gray-500 bg-white border border-gray-300 cursor-pointer rounded-l-md md:text-sm hover:bg-gray-50"
+          @click="startpage()"
         >
           <span class="font-bold">&laquo;</span>
         </span>
@@ -69,14 +69,14 @@
                 ${page === current1 ? 'bg-blue' : 'bg-white'}
                 `"
           >
-            {{ getPage(this.data, this.elemParPage, 2) }}
+            {{ getPage(data, elemParPage, 2) }}
           </span>
         </div>
         <div>
           <span
             class="relative z-10 inline-flex items-center px-4 py-2 text-xs font-medium text-indigo-600 border border-indigo-500 cursor-pointer bg-blue md:text-sm"
           >
-            {{ getNumPages(this.numElements, this.elemParPage) }}
+            {{ getNumPages(numElements, elemParPage) }}
           </span>
         </div>
         <div
@@ -103,7 +103,7 @@
                 ${page === current1 ? 'bg-blue' : 'bg-white'}
               `"
           >
-            {{ getPage(this.data, this.elemParPage, 2) }}
+            {{ getPage(data, elemParPage, 2) }}
           </span>
         </div>
         <div @click="nextpage()">
@@ -143,8 +143,8 @@
           </span>
         </div>
         <span
-          @click="limitpage()"
           class="relative inline-flex items-center px-4 py-2 text-xs font-medium text-gray-500 bg-white border border-gray-300 cursor-pointer rounded-r-md md:text-sm hover:bg-gray-50"
+          @click="limitpage()"
         >
           <span class="font-bold">&raquo;</span>
         </span>

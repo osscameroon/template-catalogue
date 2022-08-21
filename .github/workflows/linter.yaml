@@ -1,0 +1,14 @@
+name: Linter
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: run linter
+        run: yarn lintfix

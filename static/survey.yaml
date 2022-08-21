@@ -101,7 +101,7 @@ items:
       - Angular.js
   - github_handle: Zaker237
     gitlab_handle: Zaker237
-    city: ""
+    city: ''
     developer_type:
       - Full stack Developer
       - Data scientist Developer
@@ -128,7 +128,7 @@ items:
       - Vue.js
       - Flask
   - github_handle: FanJups
-    gitlab_handle: ""
+    gitlab_handle: ''
     city: Yaoundé
     developer_type:
       - Full stack Developer
@@ -203,8 +203,8 @@ items:
       - Odoo
       - BackboneJS
       - OWL (Odoo Web Library)
-  - github_handle: ""
-    gitlab_handle: ""
+  - github_handle: ''
+    gitlab_handle: ''
     city: Maroua
     developer_type:
       - Web Developer
@@ -253,7 +253,7 @@ items:
       - Express
       - Vue.js
   - github_handle: iamdipanda
-    gitlab_handle: ""
+    gitlab_handle: ''
     city: Douala
     developer_type:
       - Backend Developer
@@ -267,8 +267,8 @@ items:
       - Go
       - Rust
     pro_abroad_frameworks: []
-  - github_handle: ""
-    gitlab_handle: ""
+  - github_handle: ''
+    gitlab_handle: ''
     city: Fundong
     developer_type:
       - Backend Developer
@@ -290,7 +290,7 @@ items:
     pro_abroad_frameworks:
       - Drupal
   - github_handle: epok07
-    gitlab_handle: ""
+    gitlab_handle: ''
     city: Douala
     developer_type:
       - Frontend Developer
@@ -454,7 +454,7 @@ items:
       - Angular
       - Vue.js
   - github_handle: test-2
-    gitlab_handle: ""
+    gitlab_handle: ''
     city: Yaoundé
     developer_type:
       - Backend Developer
@@ -495,4 +495,3 @@ items:
       - JavaScript
     pro_abroad_frameworks:
       - React.js
-

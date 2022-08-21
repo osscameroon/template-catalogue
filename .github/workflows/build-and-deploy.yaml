@@ -48,7 +48,7 @@ jobs:
           service: template-catalogue
           type: compose
           env: prod
-          patch-field: ".services.app.image"
+          patch-field: '.services.app.image'
           patch-value: ${{ steps.meta.outputs.tags }}
           file: template-catalogue-stack.yml
           gh-token: ${{ secrets.GA_WORKFLOW_DEPLOYMENTS_TOKEN }}

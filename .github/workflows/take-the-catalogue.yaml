@@ -1,7 +1,7 @@
 name: Process catalogue's entry
 on:
   issues:
-    types: [ opened ]
+    types: [opened]
 concurrency: 'main'
 jobs:
   take_catalogue:

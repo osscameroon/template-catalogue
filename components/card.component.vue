@@ -22,8 +22,8 @@
             <em style="color: #576f7f" class="text-sm">
               <div
                 v-for="(item, myIndex) in developer_type.slice(0, 1)"
-                class="card-tags-dev"
                 :key="myIndex"
+                class="card-tags-dev"
               >
                 {{ item }}
               </div>
