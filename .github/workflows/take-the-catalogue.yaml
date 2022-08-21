@@ -6,3 +6,22 @@ concurrency: 'main'
 jobs:
   take_catalogue:
     runs-on: ubuntu-latest
+    if: contains(github.event.issue.title, 'DO NOT EDIT') && contains(github.event.issue.title, 'takes the catalogue')
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GA_WORKFLOW_DEPLOYMENTS_TOKEN }}
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - uses: elhmn/github-issue-parser@release-parse-checkbox
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/take-the-catalogue.yaml
+
+      - run: echo '${{ steps.issue-parser.outputs.jsonString }}' > catalogue_submission.json
+
+      - run: |
+          cat catalogue_submission.json | jq  
