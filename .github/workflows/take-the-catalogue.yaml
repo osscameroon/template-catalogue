@@ -36,7 +36,7 @@ jobs:
         shell: bash
         run: |
           yq ea '. as $item ireduce ({}; . *+ $item)' -i ./src/res/catalogue.yaml catalogue_submission.yaml
-      - run: cat ./src/res/catalogue.yaml
+          #- run: cat ./src/res/catalogue.yaml
       - name: Commit changes
         shell: bash
         run: |
